@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint final</title>
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="" width="80" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html"><- Volver al home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!--heyCRUD-->
+
+    <div class="container mt-5">
+
+        <div class="row">
+
+            <div div class="col-12">
+                <h3 class="text-center"> Panel administrativo</h3>
+
+                <form class="form-group mt-4">
+                    <input id="inputUrl" type="text" class="form-control " placeholder="Url imagen" name="url"
+                        required />
+
+                    <input id="inputNombre" type="text" class="form-control mt-2" name="nombre" autoComplete="off"
+                        placeholder="Nombre producto" required />
+
+                    <input id="inputPrecio" type="number" class="form-control mt-2" name="precio" autoComplete="off"
+                        placeholder="Precio producto" required />
+
+                        <input id="inputCat" type="text" class="form-control mt-2" name="nombre" autoComplete="off"
+                        placeholder="Categoría producto" required />
+
+                  
+
+                    <div class="d-grid gap-2 mx-auto mt-4">
+                        <button type="button" class="btn btn-dark btn__crear">
+                            Crear producto
+                        </button>
+                        <button type="button" class="btn btn-dark btn__modificar">
+                            Modificar producto
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="lis__product  container">
+        <h2 class="text-center my-4">Productos actuales</h2>
+        <hr>
+    </div>
+
+
+    <script src="js/app.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+</body>
+</html>

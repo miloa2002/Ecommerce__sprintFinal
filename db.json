@@ -1,0 +1,78 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Mazorca",
+      "precio": "1800",
+      "img": "http://127.0.0.1:5500/img/productos/producto1.png",
+      "categoria": "verdura",
+      "cantidad": "1"
+    },
+    {
+      "id": 2,
+      "nombre": "Aguacate",
+      "precio": 6000,
+      "img": "img/productos/producto2.png",
+      "categoria": "fruta",
+      "cantidad": "1"
+    },
+    {
+      "id": 3,
+      "nombre": "Curuba",
+      "precio": 300,
+      "img": "img/productos/producto3.png",
+      "categoria": "fruta",
+      "cantidad": "1"
+    },
+    {
+      "id": 4,
+      "nombre": "Fresa",
+      "precio": 2000,
+      "img": "img/productos/producto4.png",
+      "categoria": "fruta",
+      "cantidad": "1"
+    },
+    {
+      "id": 5,
+      "nombre": "Pulpa de piña 500gr",
+      "precio": 5690,
+      "img": "img/productos/pulpa.png",
+      "categoria": "pulpas",
+      "cantidad": "1"
+    },
+    {
+      "id": 6,
+      "nombre": "Tangelo",
+      "precio": 1500,
+      "img": "img/productos/producto6.png",
+      "categoria": "fruta",
+      "cantidad": "1"
+    },
+    {
+      "img": "https://exitocol.vtexassets.com/arquivos/ids/13315251/Limpido-Regular-1000-cc-463108_b.jpg?v=637911313905630000",
+      "nombre": "limpido",
+      "precio": "4000",
+      "categoria": "limpieza",
+      "id": 7
+    }
+  ],
+  "compras": [
+    {
+      "id": 1,
+      "nombre": "camilo",
+      "correo": "agude.tap@gmail.com",
+      "telefono": 34334
+    }
+  ],
+  "ciudades": [
+    "Medellin",
+    "Bello",
+    "Santa Fé de Antioquia",
+    "Apartadó",
+    "Turbo",
+    "Andes",
+    "Caucasia",
+    "Arboletes",
+    "Belmira"
+  ]
+}

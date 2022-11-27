@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint final</title>
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header p-2 text-light">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <p class="m-0 fw-light">Something you love is now on sale! <a href="#"
+                        class="fw-normal text-light ms-2">Buy Now!</a></p>
+            </div>
+        </div>
+    </header>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="img/logo-origin.png" width="150" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn d-flex align-items-center" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                        <li class="nav-item">
+                            <a class="nav-link active fs-3 p-0" aria-current="page" href="#"><i
+                                    class="fa fa-map-marker text-dark" aria-hidden="true"></i>
+                            </a>
+                            <p class="m-0">Antioquia</p>
+                        </li>
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Compras disponibles solo en Antioquia</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-floating">
+                                        <select class="form-select seleccionC" id="floatingSelect" aria-label="Floating label select example">
+                                          <option selected id="opciones">---</option>
+                                          <!-- <option value="medellin">Medellín</option>
+                                          <option value="Bello">Bello</option>
+                                          <option value="3">Three</option> -->
+                                        </select>
+                                        <label for="floatingSelect">Selecciona la ciudad para enviar tu pedido</label>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="enviarCiudad" type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Confirmar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--MODAL-->
+                </ul>
+                <form class="d-flex me-auto col-md-8 mb-4 mb-lg-0" role="search">
+                    <input id="buscaUsuario" class="form-control rounded-0" type="text"
+                        placeholder="Busca por categoría" aria-label="Search">
+                    <button id="buscarInput" class="btn btn-search rounded-0"><i class="fa fa-search"
+                            aria-hidden="true"></i></button>
+                </form>
+                <ul class="navbar-nav me-0 mb-2 mb-lg-0 d-flex flex-row justify-content-start">
+                    <li class="nav-item me-2">
+                        <a class="nav-link active fs-3 border-end" aria-current="page" href="#"><i class="fa fa-phone"
+                                aria-hidden="true"></i></a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a id="favoritos" class="nav-link active fs-3 border-end" aria-current="page" href="#"><i
+                                class="fa fa-heart" aria-hidden="true"></i></a>
+                    </li>
+
+                    <!--admin-->
+                    <button type="button" class="btn p-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <li class="nav-item me-2"><a class="nav-link active fs-3 border-end" aria-current="page"
+                                href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
+                    </button>
+
+                    <!-- Modal -->
+                    <div class=" modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-12">
+                                        <label for="Nombre" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="Nombre" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="Apellido" class="form-label">Apellido</label>
+                                        <input type="text" class="form-control" id="Apellido" required>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-primary" id="enviarAdmin">Ir al panel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--fin admin-->
+
+                    </li>
+                    <li class=" nav-item position-relative">
+                        <a id="car" class="nav-link active fs-3" aria-current="page" href="#"><i
+                                class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        <span id="cartAmount"
+                            class="position-absolute top-0 start-50 badge rounded-pill bg-danger">0+</span>
+                    </li>
+                    <!--card-->
+                    <div id="cardCart" class="card position-absolute top-100 container" style="width: 18rem;">
+                        <!--producto carro-->
+                        <div class="productos">
+                            <div class="productIndividual">
+
+                                <!--<div class="card-body card__products">
+                                    
+                                     <div id="product" class="product d-flex align-items-center gap-2 mb-3">
+                                        <img src="https://www.healthychildren.org/SiteCollectionImagesArticleImages/child-holding-an-apple.jpg?RenditionID=6" alt="" width="70" height="70">
+                                        <div class="card-text">
+                                            <p id="product__title" class="m-0">Fantasy crunchy chocolat</p>
+                                            <p class="m-0 fw-light"><span>1</p>
+                                            <p class="m-0 fw-light"><span>x $25.68</span></p>
+                                            
+                                            <a href="#" id="borrar" class="position-absolute top-0 end-0 p-3 text-dark">x</a>
+                                        </div>  
+                                    </div>-->
+                            </div>
+                        </div>
+
+                        <!--fin producto carro-->
+                        <div class="botones d-flex justify-content-between my-4">
+                            <div class="btn__cart1">
+                                <p>Total:</p>
+                                <a href="#" id="varCart" class="btn">View cart</a>
+                            </div>
+                            <div class="btn__cart2">
+                                <p id="priceTotal" class="fw-bold">0</p>
+                                <a href="carrito.html" id="Checkout" class="btn">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--fin card-->
+            </div>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <!--categorias-->
+    <div class="categorias mt-5 mb-5">
+        <div class="container">
+            <div class="d-lg-flex justify-content-between align-items-center">
+                <div class="btn-categoria text-center">
+                    <button id="categorias_btn" type="button" class="btn fw-bold p-3 ps-4 pe-4"><i
+                            class="fa fa-bars pe-4" aria-hidden="true"></i> All categories</button>
+                </div>
+                <div class="btns-opciones d-flex flex-wrap justify-content-center">
+                    <!--btndrop-->
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Home
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                    <!--fin btndrop-->
+                    <!--btndrop-->
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Shop
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                    <!--fin btndrop-->
+                    <!--btndrop-->
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Categorías
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                    <!--fin btndrop-->
+                    <!--btndrop-->
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Mega Menu
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                    <!--fin btndrop-->
+                    <!--btndrop-->
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Blog
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                    <!--fin btndrop-->
+                    <!--btndrop-->
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Pages
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                    <!--fin btndrop-->
+                    <!--btndrop-->
+                    <div class="dropdown">
+                        <a class="btn" href="#">Contact</a>
+                    </div>
+                    <!--fin btndrop-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--grid uno-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 ">
+                <img src="img/banners/hero-banner.jpg" alt="" class="anchoIgm">
+            </div>
+            <div class="col-md-4"><img src="img/banners/pexels-picjumbocom-196643.jpg" class="mt-3 mt-md-0 anchoIgm"
+                    alt="">
+                <img src="img/banners/pexels-polina-kovaleva-5645017.jpg" class="mt-3 anchoIgm" alt="">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-4 mb-sm-3 mb-md-0"><img src="img/banners/pexels-polina-kovaleva-5645031.jpg"
+                    class="anchoIgm" alt=""></div>
+            <div class="col-md-4 mb-sm-3 mb-md-0"><img src="img/banners/pexels-polina-kovaleva-5645089.jpg"
+                    class="anchoIgm" alt=""></div>
+            <div class="col-md-4 mb-sm-3 mb-md-0"><img src="img/banners/pexels-polina-kovaleva-5645095.jpg"
+                    class="anchoIgm" alt=""></div>
+        </div>
+    </div>
+
+    <!--top del dia-->
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-md-4">
+                <ul class="list-group listas__categorias">
+                    <li class="list-group-item category__title px-0 mb-4 fw-bold" aria-current="true">Category</li>
+                    <div class="d-flex align-items-center ms-3">
+                        <img src="img/iconos/healthy-food.png" width="25" class="" alt="">
+                        <li class="list-group-item border-0 fw-normal">Vegetables & Fruits</li>
+                    </div>
+                    <div class="d-flex align-items-center ms-3">
+                        <img src="img/iconos/hot-beverage.png" width="25" class="" alt="">
+                        <li class="list-group-item border-0 fw-normal">Beverages</li>
+                    </div>
+                    <div class="d-flex align-items-center ms-3">
+                        <img src="img/iconos/meat.png" width="25" class="" alt="">
+                        <li class="list-group-item border-0 fw-normal">Meats & Seafood</li>
+                    </div>
+                    <div class="d-flex align-items-center ms-3">
+                        <img src="img/iconos/coffee.png" width="25" class="" alt="">
+                        <li class="list-group-item border-0 fw-normal">Breakfast & Dairy</li>
+                    </div>
+                    <div class="d-flex align-items-center ms-3">
+                        <img src="img/iconos/snow.png" width="25" class="" alt="">
+                        <li class="list-group-item border-0 fw-normal">Frozen & Foods</li>
+                    </div>
+                    <div class="d-flex align-items-center ms-3">
+                        <img src="img/iconos/nachos.png" width="25" class="" alt="">
+                        <li class="list-group-item border-0 fw-normal">Biscuits & Snacks</li>
+                    </div>
+                    <div class="d-flex align-items-center ms-3">
+                        <img src="img/iconos/vegetable.png" width="25" class="" alt="">
+                        <li class="list-group-item border-0 fw-normal">Grocery & Staples</li>
+                    </div>
+                    <div class="d-flex align-items-center ms-3">
+                        <img src="img/iconos/cocktail.png" width="25" class="" alt="">
+                        <li class="list-group-item border-0 fw-normal">Wines & Alcohol Drinks</li>
+                    </div>
+                </ul>
+            </div>
+            <div class="col-md-8">
+                <!--card-->
+                <div class="card border-0">
+                    <div class="card-body">
+                        <h5 class="card-title fs-3">Top Save Today</h5>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="category-flex1">
+                                <i class="fa fa-leaf fs-3 plant" aria-hidden="true"></i>
+                                <p class="card-text fw-light">Don't miss this opportunity at special discount just for
+                                    this week</p>
+                            </div>
+                            <div class="category-flex2">
+                                <button id="btn__expired" type="button" class="btn p-3 ps-4 pe-4">Expires in:
+                                    <span>349:3:45:37</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--fin card-->
+                <!--product-->
+                <div id="listaProductos" class="row sumarRestar">
+                    <!-- <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="img/productos/producto1.png" class="anchoIgm" alt="">
+                                <div class="d-flex align-items-center justify-content-center">
+                                <a id="favIcon" class="nav-link fs-3 border px-2" aria-current="page" href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                </div>
+                                <p class="card-text fw-normal">Fantasy Crunchy Choco Chip Cookies</p>
+                                <p class="fw-bold product__price fs-5">$26.69</p>
+                                <div class="d-flex align-items-center justify-content-center gap-4">
+                                    <a href="#" id="agregarCarrito" class="btn btn-light opacity-50">Add</a>
+                                    <i class="fa fa-plus plus" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="img/productos/producto2.png" class="anchoIgm" alt="">
+                                <p class="card-text fw-normal">Fantasy Crunchy Choco Chip Cookies</p>
+                                <p class="fw-bold product__price fs-5">$26.69</p>
+                                <div class="d-flex align-items-center justify-content-center gap-4">
+                                    <a href="#" class="btn btn-light opacity-50">Add</a>
+                                    <i class="fa fa-plus plus" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="img/productos/producto3.png" class="anchoIgm" alt="">
+                                <p class="card-text fw-normal">Fantasy Crunchy Choco Chip Cookies</p>
+                                <p class="fw-bold product__price fs-5">$26.69</p>
+                                <div class="d-flex align-items-center justify-content-center gap-4">
+                                    <a href="#" class="btn btn-light opacity-50">Add</a>
+                                    <i class="fa fa-plus plus" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="img/productos/producto4.png" class="anchoIgm" alt="">
+                                <p class="card-text fw-normal">Fantasy Crunchy Choco Chip Cookies</p>
+                                <p class="fw-bold product__price fs-5">$26.69</p>
+                                <div class="d-flex align-items-center justify-content-center gap-4">
+                                    <a href="#" class="btn btn-light opacity-50">Add</a>
+                                    <i class="fa fa-plus plus" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="img/productos/pulpa.png" class="anchoIgm" alt="">
+                                <p class="card-text fw-normal">Fantasy Crunchy Choco Chip Cookies</p>
+                                <p class="fw-bold product__price fs-5">$26.69</p>
+                                <div class="d-flex align-items-center justify-content-center gap-4">
+                                    <a href="#" class="btn btn-light opacity-50">Add</a>
+                                    <i class="fa fa-plus plus" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="img/productos/producto6.png" class="anchoIgm" alt="">
+                                <p class="card-text fw-normal">Fantasy Crunchy Choco Chip Cookies</p>
+                                <p class="fw-bold product__price fs-5">$26.69</p>
+                                <div class="d-flex align-items-center justify-content-center gap-4">
+                                    <a href="#" class="btn btn-light opacity-50">Add</a>
+                                    <i class="fa fa-plus plus" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <!--fin product-->
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <footer class="footer py-4 fw-light">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="list-group">
+                        <li class="list-group-item"><img src="img/logo-origin.png" class="anchoIgm" alt=""></li>
+                        <li class="list-group-item">In publishing and graphic design, Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit.</li>
+                        <div class="adress mt-2">
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-home fs-5" aria-hidden="true"></i>
+                                <li class="list-group-item">1418 Riverwood Drive, CA 96052, US</li>
+                            </div>
+                            <div class="d-flex">
+                                <i class="fa fa-envelope fs-5" aria-hidden="true"></i>
+                                <li class="list-group-item">support@fastkart.com</li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <ul class="list-group">
+                        <li class="list-group-item fw-bold fs-5">Categories</li>
+                        <li class="list-group-item">Vegetables & Fruits</li>
+                        <li class="list-group-item">Beverages</li>
+                        <li class="list-group-item">Meats & Seafood</li>
+                        <li class="list-group-item">Frozen Foods</li>
+                        <li class="list-group-item">Biscuits & Snacks</li>
+                        <li class="list-group-item">Grocery & Staples</li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <ul class="list-group">
+                        <li class="list-group-item fw-bold fs-5">Useful Links</li>
+                        <li class="list-group-item">Home</li>
+                        <li class="list-group-item">Shop</li>
+                        <li class="list-group-item">About Us</li>
+                        <li class="list-group-item">Blog</li>
+                        <li class="list-group-item">Contact Us</li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <ul class="list-group">
+                        <li class="list-group-item fw-bold fs-5">Help Center</li>
+                        <li class="list-group-item">Your Order</li>
+                        <li class="list-group-item">Your Account</li>
+                        <li class="list-group-item">Track Order</li>
+                        <li class="list-group-item">Your WishList</li>
+                        <li class="list-group-item">Search</li>
+                        <li class="list-group-item">FAQ</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-group">
+                        <li class="list-group-item fw-bold fs-5">Contact Us</li>
+                        <div class="tel d-flex align-items-center">
+                            <i class="fa fa-phone fs-5" aria-hidden="true"></i>
+                            <li class="list-group-item fw-light">Hotline24/7:</li>
+                        </div>
+                        <li class="list-group-item fw-bold p-0 ms-4">+91 888 104 2340</li>
+
+                        <div class="tel d-flex align-items-center">
+                            <i class="fa fa-phone fs-5" aria-hidden="true"></i>
+                            <li class="list-group-item fw-light">Email Adress:</li>
+                        </div>
+                        <li class="list-group-item fw-bold p-0 ms-4">+fastkart@hotmail.com</li>
+
+
+                        <div class="tel">
+                            <div class="d-flex align-items-center">
+                                <img src="img/iconos/pngwing.com (3).png" class="anchoIgm w-50" alt="">
+                                <img src="img/iconos/pngwing.com (2).png" class="anchoIgm w-50" alt="">
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="row d-flex align-items-center border-top border-light mt-2">
+                <div class="col-md-4 mt-4">@2022 Fastkart All rights reserved</div>
+                <div class="col-md-4 mt-4">
+                    <div class="d-flex align-items-center justify-content-center gap-4">
+                        <img src="img/footer/paypal-logo.png" class="anchoIgm icon__footer" alt="">
+                        <img src="img/footer/symbols.png" class="anchoIgm icon__footer" alt="">
+                        <img src="img/footer/stripe.png" class="anchoIgm icon__footer" alt="">
+                    </div>
+                </div>
+                <div class="col-md-4 mt-4">
+                    <div class="d-flex align-items-center justify-content-center gap-2">
+                        <p class="m-0">Stay connected:</p>
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/favoritos.js"></script>
+    <script src="js/filtrar.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
